@@ -1,4 +1,7 @@
 module.exports = {
-    publicPath: '/GenshinImpactCalDamage/',
-    outputDir: 'docs'
+  "publicPath": "/GenshinImpactCalDamage/",
+  "outputDir": "docs",
+  "transpileDependencies": [
+    "vuetify"
+  ]
 }
