@@ -1,5 +1,7 @@
 # genshin_cal
 
+https://nashik.github.io/GenshinImpactCalDamage/
+
 ## Project setup
 ```
 npm install
