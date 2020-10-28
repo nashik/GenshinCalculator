@@ -4,7 +4,7 @@
       <Header />
     </v-app-bar>
     <v-content>
-      <Main
+      <Input
         @change:base_attack="base_attack=$event"
         @change:artifacts_attack="artifacts_attack=$event"
       />
@@ -41,7 +41,7 @@
 <script>
 import Header from "../organisms/Header";
 import Footer from "../organisms/Footer";
-import Main from "../organisms/Main";
+import Input from "../organisms/Input";
 
 export default {
   name: "GenshinCalc",
@@ -49,7 +49,7 @@ export default {
   components: {
     Header,
     Footer,
-    Main
+    Input
   },
   data() {
     return {
