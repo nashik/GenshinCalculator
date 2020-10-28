@@ -1,10 +1,12 @@
 import Vue from 'vue'
-import App from './App.vue'
-import vuetify from './plugins/vuetify';
+//import App from './App.vue'
+import GenshinCalc from './components/pages/GenshinCalc.vue'
+import vuetify from './plugins/vuetify'
 
 Vue.config.productionTip = false
 
 new Vue({
   vuetify,
-  render: h => h(App)
+  // render: h => h(App)
+  render: h => h(GenshinCalc)
 }).$mount('#app')
