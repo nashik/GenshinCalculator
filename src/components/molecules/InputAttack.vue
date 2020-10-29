@@ -1,7 +1,7 @@
 <template>
   <v-text-field
-    v-model.trim="base_attack_val"
-    label="基礎攻撃力(キャラ+武器)"
+    v-model.trim="attack_val"
+    :label="attack_label"
     type="number"
     min="0"
     placeholder="1234"
@@ -11,19 +11,22 @@
 
 <script>
 export default {
-  name: "InputBaseAttack",
+  name: "InputAttack",
   props: {
-    base_attack: {
+    attack_label: {
+      type: String
+    },
+    attack: {
       type: Number
     }
   },
   computed: {
-    base_attack_val: {
+    attack_val: {
       get() {
-        return this.base_attack;
+        return this.attack;
       },
       set(value) {
-        this.$emit("change:base_attack", value);
+        this.$emit("change:attack", value);
       }
     }
   },
@@ -40,3 +43,6 @@ export default {
   }
 };
 </script>
+
+      <InputAttack :attack_label="String('test')" @change:attack="changeBaseAttack" />
+      <InputAttack :attack_label="String('aaa')" @change:attack="changeArtifactsAttack" />

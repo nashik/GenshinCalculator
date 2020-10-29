@@ -2,8 +2,8 @@
   <v-card width="500px" class="mx-auto my-10">
     <v-card-title>Input</v-card-title>
     <v-card-text>
-      <InputBaseAttack @change:base_attack="changeBaseAttack" />
-      <InputArtifactsAttack @change:artifacts_attack="changeArtifactsAttack" />
+      <InputAttack :attack_label="String('基礎攻撃力')" @change:attack="changeBaseAttack" />
+      <InputAttack :attack_label="String('聖遺物攻撃力')" @change:attack="changeArtifactsAttack" />
       <InputCriticalRate @change:critical_rate="changeCriticalRate" />
       <InputCriticalDamage @change:critical_damage="changeCriticalDamage" />
     </v-card-text>
@@ -11,16 +11,14 @@
 </template>
 
 <script>
-import InputBaseAttack from "../molecules/InputBaseAttack";
-import InputArtifactsAttack from "../molecules/InputArtifactsAttack";
+import InputAttack from "../molecules/InputAttack";
 import InputCriticalRate from "../molecules/InputCriticalRate";
 import InputCriticalDamage from "../molecules/InputCriticalDamage";
 
 export default {
   name: "Main",
   components: {
-    InputBaseAttack,
-    InputArtifactsAttack,
+    InputAttack,
     InputCriticalRate,
     InputCriticalDamage
   },
