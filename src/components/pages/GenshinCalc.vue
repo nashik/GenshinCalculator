@@ -30,11 +30,11 @@
                 <td>{{ total_attack }}</td>
               </tr>
               <tr>
-                <td>会心率</td>
+                <td>会心率(%)</td>
                 <td>{{ critical_rate }}</td>
               </tr>
               <tr>
-                <td>会心ダメージ</td>
+                <td>会心ダメージ(%)</td>
                 <td>{{ critical_damage }}</td>
               </tr>
             </tbody>
