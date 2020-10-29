@@ -5,6 +5,7 @@
     type="number"
     min="0"
     placeholder="1234"
+    @keypress="validateInteger"
   ></v-text-field>
 </template>
 
@@ -18,11 +19,22 @@ export default {
   },
   computed: {
     base_attack_val: {
-      // get() {
-      //   return this.base_attack;
-      // },
+      get() {
+        return this.base_attack;
+      },
       set(value) {
         this.$emit("change:base_attack", value);
+      }
+    }
+  },
+  methods: {
+    validateInteger(e) {
+      const charCode = e.which ? e.which : e.keyCode;
+      if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        // 数字入力のみ許可する
+        e.preventDefault();
+      } else {
+        return true;
       }
     }
   }
