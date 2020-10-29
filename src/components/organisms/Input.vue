@@ -2,8 +2,8 @@
   <v-card width="500px" class="mx-auto my-10">
     <v-card-title>Input</v-card-title>
     <v-card-text>
-      <InputAttack :attack_label="String('基礎攻撃力')" @change:attack="changeBaseAttack" />
-      <InputAttack :attack_label="String('聖遺物攻撃力')" @change:attack="changeArtifactsAttack" />
+      <InputAttack attack_label="基礎攻撃力" @change:attack="changeBaseAttack" />
+      <InputAttack attack_label="聖遺物攻撃力" @change:attack="changeArtifactsAttack" />
       <InputCriticalRate @change:critical_rate="changeCriticalRate" />
       <InputCriticalDamage @change:critical_damage="changeCriticalDamage" />
     </v-card-text>
