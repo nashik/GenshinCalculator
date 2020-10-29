@@ -1,5 +1,5 @@
 module.exports = {
-  "publicPath": "/GenshinImpactCalDamage/",
+  "publicPath": "/GenshinCalculator/",
   "outputDir": "docs",
   "transpileDependencies": [
     "vuetify"
