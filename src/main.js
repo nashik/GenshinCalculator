@@ -3,6 +3,7 @@ import Vue from 'vue'
 import GenshinCalc from './components/pages/GenshinCalc.vue'
 import vuetify from './plugins/vuetify'
 
+Vue.config.devtools = true;
 Vue.config.productionTip = false
 
 new Vue({

@@ -19,19 +19,24 @@ export default {
     InputArtifactsAttack
   },
   props: {
-    base_attack: {
-      type: Number
-    },
-    artifacts_attack: {
+    total_attack: {
       type: Number
     }
   },
   methods: {
     changeBaseAttack: function(value) {
-      this.$emit("change:base_attack", value);
+      this.base_attack = value;
+      this.$emit("change:total_attack", Number(this.base_attack) + Number(this.artifacts_attack));
     },
     changeArtifactsAttack: function(value) {
-      this.$emit("change:artifacts_attack", value);
+      this.artifacts_attack = value;
+      this.$emit("change:total_attack", Number(this.base_attack) + Number(this.artifacts_attack));
+    }
+  },
+  data() {
+    return {
+      base_attack: 0,
+      artifacts_attack: 0
     }
   }
 };
