@@ -11,16 +11,16 @@
         </thead>
         <tbody>
           <tr>
-            <td>基礎攻撃力</td>
-            <td>{{ total_attack }}</td>
+            <td>通常ダメージ</td>
+            <td>{{ normalDamage }}</td>
           </tr>
           <tr>
-            <td>会心率(%)</td>
-            <td>{{ critical_rate }}</td>
+            <td>会心ダメージ</td>
+            <td>{{ criticalDamage }}</td>
           </tr>
           <tr>
-            <td>会心ダメージ(%)</td>
-            <td>{{ critical_damage }}</td>
+            <td>期待値</td>
+            <td>{{ expectedDamage }}</td>
           </tr>
         </tbody>
       </template>
@@ -40,6 +40,20 @@ export default {
     },
     critical_damage: {
       type: Number
+    }
+  },
+  computed: {
+    normalDamage() {
+      return this.total_attack;
+    },
+    criticalDamage() {
+      return this.total_attack * (1 + this.critical_damage / 100);
+    },
+    expectedDamage() {
+      return (
+        this.total_attack * (1 - this.critical_rate / 100) +
+        this.criticalDamage * (this.critical_rate / 100)
+      );
     }
   }
 };
