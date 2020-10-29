@@ -6,6 +6,8 @@
     <v-content>
       <Input
         @change:total_attack="total_attack=$event"
+        @change:critical_rate="critical_rate=$event"
+        @change:critical_damage="critical_damage=$event"
       />
       <v-card width="500px" class="mx-auto my-10">
         <v-card-title>値の受け渡し確認(Pages)</v-card-title>
@@ -21,6 +23,14 @@
               <tr>
                 <td>基礎攻撃力</td>
                 <td>{{ total_attack }}</td>
+              </tr>
+              <tr>
+                <td>会心率</td>
+                <td>{{ critical_rate }}</td>
+              </tr>
+              <tr>
+                <td>会心ダメージ</td>
+                <td>{{ critical_damage }}</td>
               </tr>
             </tbody>
           </template>
@@ -49,6 +59,8 @@ export default {
   data() {
     return {
       total_attack: 0,
+      critical_rate: 0,
+      critical_damage: 0
     };
   }
 };
