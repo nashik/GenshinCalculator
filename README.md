@@ -1,6 +1,6 @@
 # genshin_cal
 
-https://nashik.github.io/GenshinImpactCalDamage/
+https://nashik.github.io/GenshinCalculator
 
 ## Project setup
 ```
