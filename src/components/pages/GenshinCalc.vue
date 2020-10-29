@@ -9,6 +9,11 @@
         @change:critical_rate="critical_rate=$event"
         @change:critical_damage="critical_damage=$event"
       />
+      <Output
+        :total_attack="total_attack"
+        :critical_rate="critical_rate"
+        :critical_damage="critical_damage"
+      />
       <v-card width="500px" class="mx-auto my-10">
         <v-card-title>値の受け渡し確認(Pages)</v-card-title>
         <v-simple-table dense>
@@ -47,6 +52,7 @@
 import Header from "../organisms/Header";
 import Footer from "../organisms/Footer";
 import Input from "../organisms/Input";
+import Output from "../organisms/Output";
 
 export default {
   name: "GenshinCalc",
@@ -54,7 +60,8 @@ export default {
   components: {
     Header,
     Footer,
-    Input
+    Input,
+    Output
   },
   data() {
     return {
