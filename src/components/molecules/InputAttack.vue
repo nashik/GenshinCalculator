@@ -43,6 +43,3 @@ export default {
   }
 };
 </script>
-
-      <InputAttack :attack_label="String('test')" @change:attack="changeBaseAttack" />
-      <InputAttack :attack_label="String('aaa')" @change:attack="changeArtifactsAttack" />
