@@ -2,25 +2,23 @@
   <v-card width="500px" class="mx-auto my-10">
     <v-card-title>Input</v-card-title>
     <v-card-text>
-      <InputAttack attack_label="基礎攻撃力" @change:attack="changeBaseAttack" />
-      <InputAttack attack_label="聖遺物攻撃力" @change:attack="changeArtifactsAttack" />
-      <InputCriticalRate @change:critical_rate="changeCriticalRate" />
-      <InputCriticalDamage @change:critical_damage="changeCriticalDamage" />
+      <InputAttack label="基礎攻撃力" @change:attack="changeBaseAttack" />
+      <InputAttack label="聖遺物攻撃力" @change:attack="changeArtifactsAttack" />
+      <InputPercentage label="会心率(%)" @change:percentage="changeCriticalRate" />
+      <InputPercentage label="会心ダメージ(%)" @change:percentage="changeCriticalDamage" />
     </v-card-text>
   </v-card>
 </template>
 
 <script>
 import InputAttack from "../molecules/InputAttack";
-import InputCriticalRate from "../molecules/InputCriticalRate";
-import InputCriticalDamage from "../molecules/InputCriticalDamage";
+import InputPercentage from "../molecules/InputPercentage";
 
 export default {
   name: "Main",
   components: {
     InputAttack,
-    InputCriticalRate,
-    InputCriticalDamage
+    InputPercentage
   },
   data() {
     return {

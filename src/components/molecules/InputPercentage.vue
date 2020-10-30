@@ -1,40 +1,40 @@
 <template>
   <v-text-field
-    v-model.trim="attack_val"
+    v-model.trim="percentage_val"
     :label="label"
     type="number"
     min="0"
-    placeholder="1234"
-    @keypress="validateInteger"
+    placeholder="12.3"
+    @keypress="validateFloat"
   ></v-text-field>
 </template>
 
 <script>
 export default {
-  name: "InputAttack",
+  name: "InputPercentage",
   props: {
     label: {
       type: String
     },
-    attack: {
+    percentage: {
       type: Number
     }
   },
   computed: {
-    attack_val: {
+    percentage_val: {
       get() {
-        return this.attack;
+        return this.percentage;
       },
       set(value) {
-        this.$emit("change:attack", value);
+        this.$emit("change:percentage", value);
       }
     }
   },
   methods: {
-    validateInteger(e) {
+    validateFloat(e) {
       const charCode = e.which ? e.which : e.keyCode;
-      if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        // 数字入力のみ許可する
+      if (charCode > 31 && (charCode < 46 || charCode == 47 || charCode > 57)) {
+        // 数字とドット入力のみ許可する
         e.preventDefault();
       } else {
         return true;
