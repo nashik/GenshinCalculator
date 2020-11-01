@@ -47,13 +47,13 @@ export default {
   },
   computed: {
     normalDamage() {
-      return this.calcNormalDamage().toFixed(2);
+      return this.calcNormalDamage();
     },
     criticalDamage() {
-      return this.calcCriticalDamage().toFixed(2);
+      return this.calcCriticalDamage();
     },
     expectedDamage() {
-      return this.calcExpectedDamage().toFixed(2);
+      return this.calcExpectedDamage();
     }
   },
   methods: {
