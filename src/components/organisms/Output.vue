@@ -47,21 +47,21 @@ export default {
   },
   computed: {
     normalDamage() {
-      return this.calcNormalDamage();
+      return this.calcNormalDamage().toFixed(2);
     },
     criticalDamage() {
-      return this.calcCriticalDamage();
+      return this.calcCriticalDamage().toFixed(2);
     },
     expectedDamage() {
-      return this.calcExpectedDamage();
+      return this.calcExpectedDamage().toFixed(2);
     }
   },
   methods: {
     calcNormalDamage() {
-      return this.total_attack * ((100 + this.damage_bonus) / 100);
+      return this.total_attack * this.damage_bonus;
     },
     calcCriticalDamage() {
-      return this.calcNormalDamage() * ((100 + this.critical_damage) / 100);
+      return this.calcNormalDamage() * this.critical_damage;
     },
     calcExpectedDamage() {
       return (

@@ -57,10 +57,14 @@ export default {
       this.$emit("change:critical_rate", Number(value));
     },
     changeCriticalDamage: function(value) {
-      this.$emit("change:critical_damage", Number(value));
+      // 倍率に変換して戻す
+      let _late = (100 + Number(value)) / 100;
+      this.$emit("change:critical_damage", _late);
     },
     changeDamageBonus: function(value) {
-      this.$emit("change:damage_bonus", Number(value));
+      // 倍率に変換して戻す
+      let _late = (100 + Number(value)) / 100;
+      this.$emit("change:damage_bonus", _late);
     }
   }
 };
