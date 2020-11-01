@@ -2,35 +2,129 @@
     {
         "id": "Skyward Blade",
         "name": "天空の刃",
-        "reality": "★5",
+        "rarity": "★5",
         "weapon_type": "Swords",
+        "special_type": "recharge%",
         "status": [
             {
                 "level": "80 - ◆◆◆◆◆◇",
                 "ascension": false,
                 "atk": 532,
-                "special": {
-                    "type": "recharge%",
-                    "value": 0.503
-                }
+                "special_value": 0.503
             },
             {
                 "level": "80 - ◆◆◆◆◆◆",
                 "ascension": true,
                 "atk": 563,
-                "special": {
-                    "type": "recharge%",
-                    "value": 0.503
-                }
+                "special": 0.503
             },
             {
                 "level": "90 - ◆◆◆◆◆◆",
                 "ascension": false,
                 "atk": 608,
-                "special": {
-                    "type": "recharge%",
-                    "value": 0.551
-                }
+                "special": 0.551
+            }
+        ]
+    },
+    {
+        "id": "Amos' Bow",
+        "name": "アモスの弓",
+        "rarity": "★5",
+        "weapon_type": "Bows",
+        "special_type": "atk%",
+        "status": [
+            {
+                "level": "80 - ◆◆◆◆◆◇",
+                "ascension": false,
+                "atk": 532,
+                "special": 0.453
+            },
+            {
+                "level": "80 - ◆◆◆◆◆◆",
+                "ascension": true,
+                "atk": 563,
+                "special": 0.453
+            },
+            {
+                "level": "90 - ◆◆◆◆◆◆",
+                "ascension": false,
+                "atk": 608,
+                "special": 0.496
+            }
+        ]
+    },
+    {
+        "id": "Primordial Jade Winged-Spear",
+        "name": "和璞鳶",
+        "rarity": "★5",
+        "weapon_type": "Polearms",
+        "special_type": "crit%",
+        "status": [
+            {
+                "level": "80 - ◆◆◆◆◆◇",
+                "ascension": false,
+                "atk": 590,
+                "special": 0.201
+            },
+            {
+                "level": "80 - ◆◆◆◆◆◆",
+                "ascension": true,
+                "atk": 621,
+                "special": 0.201
+            },
+            {
+                "level": "90 - ◆◆◆◆◆◆",
+                "ascension": false,
+                "atk": 674,
+                "special": 0.221
+            }
+        ]
+    },
+    {
+        "id": "Skyward Pride",
+        "name": "天空の傲",
+        "rarity": "★5",
+        "weapon_type": "Claymores",
+        "special_type": "recharge%",
+        "status": [
+            {
+                "level": "80 - ◆◆◆◆◆◇",
+                "ascension": false,
+                "atk": 590,
+                "special": 0.335
+            },
+            {
+                "level": "80 - ◆◆◆◆◆◆",
+                "ascension": true,
+                "atk": 621,
+                "special": 0.335
+            }
+        ]
+    },
+    {
+        "id": "Lost Prayer to the Sacred Winds",
+        "name": "四風原点",
+        "rarity": "★5",
+        "weapon_type": "Catalysts",
+        "special_type": "crit%",
+        "status": [
+            {
+                "level": "80 - ◆◆◆◆◆◇",
+                "ascension": false,
+                "atk": 532,
+                "special": 0.302
+            },
+            {
+                "level": "80 - ◆◆◆◆◆◆",
+                "ascension": true,
+                "atk": 563,
+                "special": 0.302
+            },
+            {
+                "level": "90 - ◆◆◆◆◆◆",
+                "ascension": true,
+                "atk": 608,
+                "special": 0.331
             }
         ]
     }
