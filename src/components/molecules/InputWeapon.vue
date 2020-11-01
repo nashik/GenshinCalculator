@@ -18,7 +18,7 @@
           :items="selectedWeapon.status"
           item-text="level"
           item-value="level"
-          label="Lv"
+          label="Lv. - 突破"
           return-object
         ></v-select>
       </v-col>
@@ -27,8 +27,8 @@
       <template v-slot:default>
         <thead>
           <tr>
-            <th class="text-left">Rarity</th>
-            <th class="text-left">Atk</th>
+            <th class="text-left">レアリティ</th>
+            <th class="text-left">攻撃力</th>
             <th class="text-left">{{ selectedWeapon.special_type }}</th>
           </tr>
         </thead>
@@ -36,7 +36,7 @@
           <tr>
             <td>{{ selectedWeapon.rarity }}</td>
             <td>{{ selectedLevel.atk }}</td>
-            <td>{{ selectedLevel.special_value }}</td>
+            <td>{{ viewSpecialValue }}</td>
           </tr>
         </tbody>
       </template>
@@ -56,15 +56,26 @@ export default {
   data() {
     return {
       weapons: weapons_json,
-      selectedWeapon: { rarity: "-", special_type: "xxx" },
+      selectedWeapon: { rarity: "-", special_type: "-" },
       selectedLevel: { atk: 0, special_value: 0 }
     };
+  },
+  computed: {
+    viewSpecialValue() {
+      if (this.selectedWeapon.special_type.match(/%/)) {
+        return (this.selectedLevel.special_value * 100).toFixed(1);
+      } else {
+        return this.selectedLevel.special_value;
+      }
+    }
   },
   methods: {
     selectWeaponType(value) {
       this.weapons = weapons_json.filter(d => d.weapon_type == value);
       this.selectedWeapon = this.weapons[0];
-      this.selectedLevel = this.selectedWeapon.status[0];
+      this.selectedLevel = this.selectedWeapon.status[
+        this.selectedWeapon.status.length - 1
+      ];
     },
     changeWeapon() {
       let l = this.selectedWeapon.status.filter(
@@ -73,7 +84,9 @@ export default {
       if (l.length != 0) {
         this.selectedLevel = l[0];
       } else {
-        this.selectedLevel = this.selectedWeapon.status[0];
+        this.selectedLevel = this.selectedWeapon.status[
+          this.selectedWeapon.status.length - 1
+        ];
       }
     }
   }

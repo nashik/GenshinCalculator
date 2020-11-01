@@ -4,7 +4,7 @@
         "name": "天空の刃",
         "rarity": "★5",
         "weapon_type": "Swords",
-        "special_type": "recharge%",
+        "special_type": "元素チャージ効率(%)",
         "status": [
             {
                 "level": "80 - ◆◆◆◆◆◇",
@@ -31,7 +31,7 @@
         "name": "アモスの弓",
         "rarity": "★5",
         "weapon_type": "Bows",
-        "special_type": "atk%",
+        "special_type": "攻撃力(%)",
         "status": [
             {
                 "level": "80 - ◆◆◆◆◆◇",
@@ -58,7 +58,7 @@
         "name": "和璞鳶",
         "rarity": "★5",
         "weapon_type": "Polearms",
-        "special_type": "crit%",
+        "special_type": "会心率(%)",
         "status": [
             {
                 "level": "80 - ◆◆◆◆◆◇",
@@ -85,7 +85,7 @@
         "name": "天空の傲",
         "rarity": "★5",
         "weapon_type": "Claymores",
-        "special_type": "recharge%",
+        "special_type": "元素チャージ効率(%)",
         "status": [
             {
                 "level": "80 - ◆◆◆◆◆◇",
@@ -106,7 +106,7 @@
         "name": "四風原点",
         "rarity": "★5",
         "weapon_type": "Catalysts",
-        "special_type": "crit%",
+        "special_type": "会心率(%)",
         "status": [
             {
                 "level": "80 - ◆◆◆◆◆◇",

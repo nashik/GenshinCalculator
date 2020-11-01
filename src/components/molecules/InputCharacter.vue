@@ -18,7 +18,7 @@
           :items="selectedCharacter.status"
           item-text="level"
           item-value="level"
-          label="Lv"
+          label="Lv. - 突破"
           return-object
           @change="changeLevel"
         ></v-select>
@@ -29,8 +29,8 @@
         <thead>
           <tr>
             <th class="text-left">HP</th>
-            <th class="text-left">ATK</th>
-            <th class="text-left">DEF</th>
+            <th class="text-left">攻撃力</th>
+            <th class="text-left">防御力</th>
             <th class="text-left">{{ selectedCharacter.special_type }}</th>
           </tr>
         </thead>
@@ -39,7 +39,7 @@
             <td>{{ selectedLevel.hp }}</td>
             <td>{{ selectedLevel.atk }}</td>
             <td>{{ selectedLevel.def }}</td>
-            <td>{{ selectedLevel.special_value }}</td>
+            <td>{{ viewSpecialValue }}</td>
           </tr>
         </tbody>
       </template>
@@ -54,11 +54,18 @@ export default {
   data() {
     return {
       characters: characters_json,
-      //   selectedCharacter: characters_json[0],
-      //   selectedLevel: characters_json[0].status[0]
-      selectedCharacter: { special_type: "xxx" },
+      selectedCharacter: { special_type: "-" },
       selectedLevel: { hp: 0, atk: 0, def: 0, special_value: 0 }
     };
+  },
+  computed: {
+    viewSpecialValue() {
+      if (this.selectedCharacter.special_type.match(/%/)) {
+        return (this.selectedLevel.special_value * 100).toFixed(1);
+      } else {
+        return this.selectedLevel.special_value;
+      }
+    }
   },
   methods: {
     changeCharacter() {
@@ -68,7 +75,9 @@ export default {
       if (l.length != 0) {
         this.selectedLevel = l[0];
       } else {
-        this.selectedLevel = this.selectedCharacter.status[0];
+        this.selectedLevel = this.selectedCharacter.status[
+          this.selectedCharacter.status.length - 1
+        ];
       }
       this.update();
     },

@@ -3,7 +3,7 @@
         "id": "Traveler",
         "name": "主人公",
         "weapon_type": "Swords",
-        "special_type": "atk%",
+        "special_type": "攻撃力(%)",
         "status": [
             {
                 "level": "80 - ◆◆◆◆◆◇",
@@ -35,7 +35,7 @@
         "id": "Kaeya",
         "name": "ガイア",
         "weapon_type": "Swords",
-        "special_type": "recharge%",
+        "special_type": "元素チャージ効率(%)",
         "status": [
             {
                 "level": "80 - ◆◆◆◆◆◆",
@@ -59,7 +59,7 @@
         "id": "Lisa",
         "name": "リサ",
         "weapon_type": "Catalysts",
-        "special_type": "ElementalMastery",
+        "special_type": "元素熟知",
         "status": [
             {
                 "level": "70 - ◆◆◆◆◆◇",
@@ -84,6 +84,22 @@
                 "atk": 234,
                 "def": 537,
                 "special_value": 96
+            }
+        ]
+    },
+    {
+        "id": "Fischl",
+        "name": "フィッシュル",
+        "weapon_type": "Bows",
+        "special_type": "攻撃力(%)",
+        "status": [
+            {
+                "level": "80 - ◆◆◆◆◆◆",
+                "ascension": true,
+                "hp": 8553,
+                "atk": 227,
+                "def": 553,
+                "special_value": 0.24
             }
         ]
     }
