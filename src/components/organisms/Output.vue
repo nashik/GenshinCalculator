@@ -1,6 +1,6 @@
 <template>
-  <v-card width="500px" class="mx-auto my-10">
-    <v-card-title>Output</v-card-title>
+  <v-card max-width="500px" class="mx-auto my-10">
+    <v-card-title>結果</v-card-title>
     <v-simple-table dense>
       <template v-slot:default>
         <thead>
@@ -32,7 +32,10 @@
 export default {
   name: "Output",
   props: {
-    total_attack: {
+    base_attack: {
+      type: Number
+    },
+    attack_bonus: {
       type: Number
     },
     critical_rate: {
@@ -58,7 +61,7 @@ export default {
   },
   methods: {
     calcNormalDamage() {
-      return this.total_attack * this.damage_bonus;
+      return this.base_attack * (1 + this.attack_bonus + this.damage_bonus);
     },
     calcCriticalDamage() {
       return this.calcNormalDamage() * this.critical_damage;

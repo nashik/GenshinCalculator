@@ -79,19 +79,19 @@ export default {
           this.selectedCharacter.status.length - 1
         ];
       }
-      this.update();
+      this.$emit("change:character", this.packData());
     },
     changeLevel() {
-      this.update();
+      this.$emit("change:character", this.packData());
     },
-    update() {
+    packData() {
       let value = {
         weapon_type: this.selectedCharacter.weapon_type,
         special_type: this.selectedCharacter.special_type,
         atk: this.selectedLevel.atk,
         special_value: this.selectedLevel.special_value
       };
-      this.$emit("change:character", value);
+      return value;
     }
   }
 };

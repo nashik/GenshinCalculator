@@ -20,6 +20,7 @@
           item-value="level"
           label="Lv. - 突破"
           return-object
+          @change="changeLevel"
         ></v-select>
       </v-col>
     </v-row>
@@ -76,6 +77,8 @@ export default {
       this.selectedLevel = this.selectedWeapon.status[
         this.selectedWeapon.status.length - 1
       ];
+
+      this.$emit("change:weapon", this.packData());
     },
     changeWeapon() {
       let l = this.selectedWeapon.status.filter(
@@ -88,6 +91,18 @@ export default {
           this.selectedWeapon.status.length - 1
         ];
       }
+      this.$emit("change:weapon", this.packData());
+    },
+    changeLevel() {
+      this.$emit("change:weapon", this.packData());
+    },
+    packData() {
+      let value = {
+        special_type: this.selectedWeapon.special_type,
+        atk: this.selectedLevel.atk,
+        special_value: this.selectedLevel.special_value
+      };
+      return value;
     }
   }
 };
