@@ -8,11 +8,13 @@
         @change:total_attack="total_attack=$event"
         @change:critical_rate="critical_rate=$event"
         @change:critical_damage="critical_damage=$event"
+        @change:damage_bonus="damage_bonus=$event"
       />
       <Output
         :total_attack="total_attack"
         :critical_rate="critical_rate"
         :critical_damage="critical_damage"
+        :damage_bonus="damage_bonus"
       />
     </v-main>
     <v-footer color="primary" dark app>
@@ -40,7 +42,8 @@ export default {
     return {
       total_attack: 0,
       critical_rate: 0,
-      critical_damage: 0
+      critical_damage: 0,
+      damage_bonus: 0
     };
   }
 };

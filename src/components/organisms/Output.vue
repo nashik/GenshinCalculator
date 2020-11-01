@@ -40,19 +40,33 @@ export default {
     },
     critical_damage: {
       type: Number
+    },
+    damage_bonus: {
+      type: Number
     }
   },
   computed: {
     normalDamage() {
-      return this.total_attack;
+      return this.calcNormalDamage();
     },
     criticalDamage() {
-      return this.total_attack * (1 + this.critical_damage / 100);
+      return this.calcCriticalDamage();
     },
     expectedDamage() {
+      return this.calcExpectedDamage();
+    }
+  },
+  methods: {
+    calcNormalDamage() {
+      return this.total_attack * ((100 + this.damage_bonus) / 100);
+    },
+    calcCriticalDamage() {
+      return this.calcNormalDamage() * ((100 + this.critical_damage) / 100);
+    },
+    calcExpectedDamage() {
       return (
-        this.total_attack * (1 - this.critical_rate / 100) +
-        this.criticalDamage * (this.critical_rate / 100)
+        this.calcNormalDamage() * (1 - this.critical_rate / 100) +
+        this.calcCriticalDamage() * (this.critical_rate / 100)
       );
     }
   }

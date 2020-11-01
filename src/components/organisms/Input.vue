@@ -1,11 +1,12 @@
 <template>
-  <v-card width="500px" class="mx-auto my-10">
+  <v-card max-width="500" class="mx-auto my-10">
     <v-card-title>Input</v-card-title>
     <v-card-text>
       <InputAttack label="基礎攻撃力" @change:attack="changeBaseAttack" />
       <InputAttack label="聖遺物攻撃力" @change:attack="changeArtifactsAttack" />
       <InputPercentage label="会心率(%)" @change:percentage="changeCriticalRate" />
       <InputPercentage label="会心ダメージ(%)" @change:percentage="changeCriticalDamage" />
+      <InputPercentage label="ダメージバフ(%)" @change:percentage="changeDamageBonus" />
     </v-card-text>
   </v-card>
 </template>
@@ -57,6 +58,9 @@ export default {
     },
     changeCriticalDamage: function(value) {
       this.$emit("change:critical_damage", Number(value));
+    },
+    changeDamageBonus: function(value) {
+      this.$emit("change:damage_bonus", Number(value));
     }
   }
 };
