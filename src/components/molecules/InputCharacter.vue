@@ -20,6 +20,7 @@
           item-value="level"
           label="Lv"
           return-object
+          @change="changeLevel"
         ></v-select>
       </v-col>
     </v-row>
@@ -30,7 +31,7 @@
             <th class="text-left">HP</th>
             <th class="text-left">ATK</th>
             <th class="text-left">DEF</th>
-            <th class="text-left">{{ selectedLevel.special.type }}</th>
+            <th class="text-left">{{ selectedCharacter.special_type }}</th>
           </tr>
         </thead>
         <tbody>
@@ -38,7 +39,7 @@
             <td>{{ selectedLevel.hp }}</td>
             <td>{{ selectedLevel.atk }}</td>
             <td>{{ selectedLevel.def }}</td>
-            <td>{{ selectedLevel.special.value }}</td>
+            <td>{{ selectedLevel.special_value }}</td>
           </tr>
         </tbody>
       </template>
@@ -53,8 +54,10 @@ export default {
   data() {
     return {
       characters: characters_json,
-      selectedCharacter: characters_json[0],
-      selectedLevel: characters_json[0].status[0]
+      //   selectedCharacter: characters_json[0],
+      //   selectedLevel: characters_json[0].status[0]
+      selectedCharacter: { special_type: "xxx" },
+      selectedLevel: { hp: 0, atk: 0, def: 0, special_value: 0 }
     };
   },
   methods: {
@@ -67,6 +70,19 @@ export default {
       } else {
         this.selectedLevel = this.selectedCharacter.status[0];
       }
+      this.update();
+    },
+    changeLevel() {
+      this.update();
+    },
+    update() {
+      let value = {
+        weapon_type: this.selectedCharacter.weapon_type,
+        special_type: this.selectedCharacter.special_type,
+        atk: this.selectedLevel.atk,
+        special_value: this.selectedLevel.special_value
+      };
+      this.$emit("change:character", value);
     }
   }
 };

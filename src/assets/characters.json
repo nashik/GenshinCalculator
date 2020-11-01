@@ -2,6 +2,8 @@
     {
         "id": "Traveler",
         "name": "主人公",
+        "weapon_type": "Swords",
+        "special_type": "atk%",
         "status": [
             {
                 "level": "80 - ◆◆◆◆◆◇",
@@ -9,10 +11,7 @@
                 "hp": 9638,
                 "atk": 188,
                 "def": 105,
-                "special": {
-                    "type": "atk%",
-                    "value": 0.18
-                }
+                "special_value": 0.18
             },
             {
                 "level": "80 - ◆◆◆◆◆◆",
@@ -20,10 +19,7 @@
                 "hp": 10122,
                 "atk": 198,
                 "def": 635,
-                "special": {
-                    "type": "atk%",
-                    "value": 0.24
-                }
+                "special_value": 0.24
             },
             {
                 "level": "90 - ◆◆◆◆◆◆",
@@ -31,16 +27,15 @@
                 "hp": 10875,
                 "atk": 213,
                 "def": 682,
-                "special": {
-                    "type": "atk%",
-                    "value": 0.24
-                }
+                "special_value": 0.24
             }
         ]
     },
     {
         "id": "Kaeya",
         "name": "ガイア",
+        "weapon_type": "Swords",
+        "special_type": "recharge%",
         "status": [
             {
                 "level": "80 - ◆◆◆◆◆◆",
@@ -48,10 +43,7 @@
                 "hp": 10830,
                 "atk": 205,
                 "def": 737,
-                "special": {
-                    "type": "recharge%",
-                    "value": 0.267
-                }
+                "special_value": 0.267
             },
             {
                 "level": "90 - ◆◆◆◆◆◆",
@@ -59,16 +51,15 @@
                 "hp": 11636,
                 "atk": 220,
                 "def": 792,
-                "special": {
-                    "type": "recharge%",
-                    "value": 0.267
-                }
+                "special_value": 0.267
             }
         ]
     },
     {
         "id": "Lisa",
         "name": "リサ",
+        "weapon_type": "Catalysts",
+        "special_type": "ElementalMastery",
         "status": [
             {
                 "level": "70 - ◆◆◆◆◆◇",
@@ -76,10 +67,7 @@
                 "hp": 7818,
                 "atk": 191,
                 "def": 468,
-                "special": {
-                    "type": "ElementalMastery",
-                    "value": 72
-                }
+                "special_value": 72
             },
             {
                 "level": "80 - ◆◆◆◆◆◆",
@@ -87,10 +75,7 @@
                 "hp": 8906,
                 "atk": 218,
                 "def": 533,
-                "special": {
-                    "type": "ElementalMastery",
-                    "value": 96
-                }
+                "special_value": 96
             },
             {
                 "level": "90 - ◆◆◆◆◆◆",
@@ -98,10 +83,7 @@
                 "hp": 9569,
                 "atk": 234,
                 "def": 537,
-                "special": {
-                    "type": "ElementalMastery",
-                    "value": 96
-                }
+                "special_value": 96
             }
         ]
     }
