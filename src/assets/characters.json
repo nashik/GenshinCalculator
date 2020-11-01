@@ -1,0 +1,108 @@
+[
+    {
+        "id": "Traveler",
+        "name": "主人公",
+        "status": [
+            {
+                "level": "80 - ◆◆◆◆◆◇",
+                "ascension": false,
+                "hp": 9638,
+                "atk": 188,
+                "def": 105,
+                "special": {
+                    "type": "atk%",
+                    "value": 0.18
+                }
+            },
+            {
+                "level": "80 - ◆◆◆◆◆◆",
+                "ascension": true,
+                "hp": 10122,
+                "atk": 198,
+                "def": 635,
+                "special": {
+                    "type": "atk%",
+                    "value": 0.24
+                }
+            },
+            {
+                "level": "90 - ◆◆◆◆◆◆",
+                "ascension": false,
+                "hp": 10875,
+                "atk": 213,
+                "def": 682,
+                "special": {
+                    "type": "atk%",
+                    "value": 0.24
+                }
+            }
+        ]
+    },
+    {
+        "id": "Kaeya",
+        "name": "ガイア",
+        "status": [
+            {
+                "level": "80 - ◆◆◆◆◆◆",
+                "ascension": true,
+                "hp": 10830,
+                "atk": 205,
+                "def": 737,
+                "special": {
+                    "type": "recharge%",
+                    "value": 0.267
+                }
+            },
+            {
+                "level": "90 - ◆◆◆◆◆◆",
+                "ascension": false,
+                "hp": 11636,
+                "atk": 220,
+                "def": 792,
+                "special": {
+                    "type": "recharge%",
+                    "value": 0.267
+                }
+            }
+        ]
+    },
+    {
+        "id": "Lisa",
+        "name": "リサ",
+        "status": [
+            {
+                "level": "70 - ◆◆◆◆◆◇",
+                "ascension": true,
+                "hp": 7818,
+                "atk": 191,
+                "def": 468,
+                "special": {
+                    "type": "ElementalMastery",
+                    "value": 72
+                }
+            },
+            {
+                "level": "80 - ◆◆◆◆◆◆",
+                "ascension": true,
+                "hp": 8906,
+                "atk": 218,
+                "def": 533,
+                "special": {
+                    "type": "ElementalMastery",
+                    "value": 96
+                }
+            },
+            {
+                "level": "90 - ◆◆◆◆◆◆",
+                "ascension": false,
+                "hp": 9569,
+                "atk": 234,
+                "def": 537,
+                "special": {
+                    "type": "ElementalMastery",
+                    "value": 96
+                }
+            }
+        ]
+    }
+]

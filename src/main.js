@@ -1,6 +1,6 @@
 import Vue from 'vue'
 //import App from './App.vue'
-import GenshinCalc from './components/pages/GenshinCalc.vue'
+import GenshinCalc from './components/pages/GenshinCalc2.vue'
 import vuetify from './plugins/vuetify'
 
 Vue.config.devtools = true;
