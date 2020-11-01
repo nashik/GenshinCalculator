@@ -16,13 +16,13 @@
                 "level": "80 - ◆◆◆◆◆◆",
                 "ascension": true,
                 "atk": 563,
-                "special": 0.503
+                "special_value": 0.503
             },
             {
                 "level": "90 - ◆◆◆◆◆◆",
                 "ascension": false,
                 "atk": 608,
-                "special": 0.551
+                "special_value": 0.551
             }
         ]
     },
@@ -37,19 +37,19 @@
                 "level": "80 - ◆◆◆◆◆◇",
                 "ascension": false,
                 "atk": 532,
-                "special": 0.453
+                "special_value": 0.453
             },
             {
                 "level": "80 - ◆◆◆◆◆◆",
                 "ascension": true,
                 "atk": 563,
-                "special": 0.453
+                "special_value": 0.453
             },
             {
                 "level": "90 - ◆◆◆◆◆◆",
                 "ascension": false,
                 "atk": 608,
-                "special": 0.496
+                "special_value": 0.496
             }
         ]
     },
@@ -64,19 +64,19 @@
                 "level": "80 - ◆◆◆◆◆◇",
                 "ascension": false,
                 "atk": 590,
-                "special": 0.201
+                "special_value": 0.201
             },
             {
                 "level": "80 - ◆◆◆◆◆◆",
                 "ascension": true,
                 "atk": 621,
-                "special": 0.201
+                "special_value": 0.201
             },
             {
                 "level": "90 - ◆◆◆◆◆◆",
                 "ascension": false,
                 "atk": 674,
-                "special": 0.221
+                "special_value": 0.221
             }
         ]
     },
@@ -91,13 +91,13 @@
                 "level": "80 - ◆◆◆◆◆◇",
                 "ascension": false,
                 "atk": 590,
-                "special": 0.335
+                "special_value": 0.335
             },
             {
                 "level": "80 - ◆◆◆◆◆◆",
                 "ascension": true,
                 "atk": 621,
-                "special": 0.335
+                "special_value": 0.335
             }
         ]
     },
@@ -112,19 +112,19 @@
                 "level": "80 - ◆◆◆◆◆◇",
                 "ascension": false,
                 "atk": 532,
-                "special": 0.302
+                "special_value": 0.302
             },
             {
                 "level": "80 - ◆◆◆◆◆◆",
                 "ascension": true,
                 "atk": 563,
-                "special": 0.302
+                "special_value": 0.302
             },
             {
                 "level": "90 - ◆◆◆◆◆◆",
                 "ascension": true,
                 "atk": 608,
-                "special": 0.331
+                "special_value": 0.331
             }
         ]
     }
