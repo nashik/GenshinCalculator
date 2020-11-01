@@ -1,0 +1,37 @@
+[
+    {
+        "id": "Skyward Blade",
+        "name": "天空の刃",
+        "reality": "★5",
+        "weapon_type": "Swords",
+        "status": [
+            {
+                "level": "80 - ◆◆◆◆◆◇",
+                "ascension": false,
+                "atk": 532,
+                "special": {
+                    "type": "recharge%",
+                    "value": 0.503
+                }
+            },
+            {
+                "level": "80 - ◆◆◆◆◆◆",
+                "ascension": true,
+                "atk": 563,
+                "special": {
+                    "type": "recharge%",
+                    "value": 0.503
+                }
+            },
+            {
+                "level": "90 - ◆◆◆◆◆◆",
+                "ascension": false,
+                "atk": 608,
+                "special": {
+                    "type": "recharge%",
+                    "value": 0.551
+                }
+            }
+        ]
+    }
+]
