@@ -12,15 +12,15 @@
         <tbody>
           <tr>
             <td>通常ダメージ</td>
-            <td>{{ normalDamage }}</td>
+            <td>{{ normalDamage.toFixed(2) }}</td>
           </tr>
           <tr>
             <td>会心ダメージ</td>
-            <td>{{ criticalDamage }}</td>
+            <td>{{ criticalDamage.toFixed(2) }}</td>
           </tr>
           <tr>
             <td>期待値</td>
-            <td>{{ expectedDamage }}</td>
+            <td>{{ expectedDamage.toFixed(2) }}</td>
           </tr>
         </tbody>
       </template>
@@ -64,12 +64,12 @@ export default {
       return this.base_attack * (1 + this.attack_bonus + this.damage_bonus);
     },
     calcCriticalDamage() {
-      return this.calcNormalDamage() * this.critical_damage;
+      return this.calcNormalDamage() * (1 + this.critical_damage);
     },
     calcExpectedDamage() {
       return (
-        this.calcNormalDamage() * (1 - this.critical_rate / 100) +
-        this.calcCriticalDamage() * (this.critical_rate / 100)
+        this.calcNormalDamage() * (1 - this.critical_rate) +
+        this.calcCriticalDamage() * this.critical_rate
       );
     }
   }
