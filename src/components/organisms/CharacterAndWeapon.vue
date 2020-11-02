@@ -43,12 +43,16 @@ export default {
       // キャラクターの会心ダメージはデフォルト50%ある
       this.character_critical_damage = 0.5;
 
-      if (value.special_type == "攻撃力(%)") {
-        this.character_attack_bonus = value.special_value;
-      } else if (value.special_type == "会心率(%)") {
-        this.character_critical_rate += value.special_value;
-      } else if (value.special_type == "会心ダメージ(%)") {
-        this.character_critical_damage += value.special_value;
+      switch (value.special_type) {
+        case "攻撃力(%)":
+          this.character_attack_bonus = value.special_value;
+          break;
+        case "会心率(%)":
+          this.character_critical_rate += value.special_value;
+          break;
+        case "会心ダメージ(%)":
+          this.character_critical_damage += value.special_value;
+          break;
       }
 
       this.emitBaseAttack();
@@ -62,12 +66,16 @@ export default {
       this.weapon_critical_rate = 0;
       this.weapon_critical_damage = 0;
 
-      if (value.special_type == "攻撃力(%)") {
-        this.weapon_attack_bonus += value.special_value;
-      } else if (value.special_type == "会心率(%)") {
-        this.weapon_critical_rate += value.special_value;
-      } else if (value.special_type == "会心ダメージ(%)") {
-        this.weapon_critical_damage += value.special_value;
+      switch (value.special_type) {
+        case "攻撃力(%)":
+          this.weapon_attack_bonus = value.special_value;
+          break;
+        case "会心率(%)":
+          this.weapon_critical_rate += value.special_value;
+          break;
+        case "会心ダメージ(%)":
+          this.weapon_critical_damage += value.special_value;
+          break;
       }
 
       this.emitBaseAttack();
