@@ -1,5 +1,5 @@
 <template>
-  <v-card max-width="600px" class="mx-auto my-10">
+  <v-card>
     <v-card-title>結果</v-card-title>
     <v-simple-table dense>
       <template v-slot:default>

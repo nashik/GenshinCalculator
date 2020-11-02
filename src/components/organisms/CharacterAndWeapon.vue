@@ -1,5 +1,5 @@
 <template>
-  <v-card max-width="600px" class="mx-auto my-10">
+  <v-card>
     <v-card-title>キャラクター</v-card-title>
     <InputCharacter @change:character="changeCharacter" />
     <v-divider class="mx-4"></v-divider>
