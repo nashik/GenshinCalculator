@@ -2,6 +2,7 @@
     {
         "id": "Traveler",
         "name": "主人公",
+        "rarity": "★5",
         "weapon_type": "Swords",
         "special_type": "攻撃力(%)",
         "status": [
@@ -34,6 +35,7 @@
     {
         "id": "Kaeya",
         "name": "ガイア",
+        "rarity": "★4",
         "weapon_type": "Swords",
         "special_type": "元素チャージ効率(%)",
         "status": [
@@ -58,6 +60,7 @@
     {
         "id": "Lisa",
         "name": "リサ",
+        "rarity": "★4",
         "weapon_type": "Catalysts",
         "special_type": "元素熟知",
         "status": [
@@ -90,6 +93,7 @@
     {
         "id": "Fischl",
         "name": "フィッシュル",
+        "rarity": "★4",
         "weapon_type": "Bows",
         "special_type": "攻撃力(%)",
         "status": [
