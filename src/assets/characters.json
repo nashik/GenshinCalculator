@@ -106,5 +106,22 @@
                 "special_value": 0.24
             }
         ]
+    },
+    {
+        "id": "Diluc",
+        "name": "ディルック",
+        "rarity": "★5",
+        "weapon_type": "Claymores",
+        "special_type": "会心率(%)",
+        "status": [
+            {
+                "level": "80 - ◆◆◆◆◆◆",
+                "ascension": true,
+                "hp": 12068,
+                "atk": 312,
+                "def": 729,
+                "special_value": 0.242
+            }
+        ]
     }
 ]
