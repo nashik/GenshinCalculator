@@ -60,6 +60,7 @@ export default {
   },
   computed: {
     viewSpecialValue() {
+      // special_typeが%値の場合、100を掛けて%表示する(小数点第1位まで)
       if (this.selectedCharacter.special_type.match(/%/)) {
         return (this.selectedLevel.special_value * 100).toFixed(1);
       } else {
@@ -69,29 +70,32 @@ export default {
   },
   methods: {
     changeCharacter() {
-      let l = this.selectedCharacter.status.filter(
+      // キャラクター変更時に、同じレベルのデータがあればそれを選択する
+      let _sameLevel = this.selectedCharacter.status.filter(
         d => d.level == this.selectedLevel.level
       );
-      if (l.length != 0) {
-        this.selectedLevel = l[0];
+      if (_sameLevel.length != 0) {
+        this.selectedLevel = _sameLevel[0];
       } else {
+        // 同じレベルのデータがない場合は、最大レベルを選択する
         this.selectedLevel = this.selectedCharacter.status[
           this.selectedCharacter.status.length - 1
         ];
       }
+
       this.$emit("change:character", this.packData());
     },
     changeLevel() {
       this.$emit("change:character", this.packData());
     },
     packData() {
-      let value = {
+      let _data = {
         weapon_type: this.selectedCharacter.weapon_type,
         special_type: this.selectedCharacter.special_type,
         atk: this.selectedLevel.atk,
         special_value: this.selectedLevel.special_value
       };
-      return value;
+      return _data;
     }
   }
 };

@@ -60,6 +60,7 @@ export default {
     };
   },
   computed: {
+    // special_typeが%値の場合、100を掛けて%表示する(小数点第1位まで)
     viewSpecialValue() {
       if (this.selectedWeapon.special_type.match(/%/)) {
         return (this.selectedLevel.special_value * 100).toFixed(1);
@@ -70,6 +71,7 @@ export default {
   },
   methods: {
     selectWeaponType(value) {
+      // キャラクター変更時に、武器の選択リストをキャラクターの武器種別でフィルタリングする
       this.weapons = weapons_json.filter(d => d.weapon_type == value);
       this.selectedWeapon = this.weapons[0];
       this.selectedLevel = this.selectedWeapon.status[
@@ -79,28 +81,31 @@ export default {
       this.$emit("change:weapon", this.packData());
     },
     changeWeapon() {
-      let l = this.selectedWeapon.status.filter(
+      // 武器変更時に、同じレベルのデータがあればそれを選択する
+      let _sameLevel = this.selectedWeapon.status.filter(
         d => d.level == this.selectedLevel.level
       );
-      if (l.length != 0) {
-        this.selectedLevel = l[0];
+      if (_sameLevel.length != 0) {
+        this.selectedLevel = _sameLevel[0];
       } else {
+        // 同じレベルのデータがない場合は、最大レベルを選択する
         this.selectedLevel = this.selectedWeapon.status[
           this.selectedWeapon.status.length - 1
         ];
       }
+
       this.$emit("change:weapon", this.packData());
     },
     changeLevel() {
       this.$emit("change:weapon", this.packData());
     },
     packData() {
-      let value = {
+      let _data = {
         special_type: this.selectedWeapon.special_type,
         atk: this.selectedLevel.atk,
         special_value: this.selectedLevel.special_value
       };
-      return value;
+      return _data;
     }
   }
 };
