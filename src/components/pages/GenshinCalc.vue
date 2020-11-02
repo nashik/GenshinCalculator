@@ -15,7 +15,7 @@
           />
         </v-col>
         <v-col cols="5">
-          <CharacterAndWeapon
+          <Artifacts
             @change:base_attack="base_attack = $event"
             @change:attack_bonus="attack_bonus = $event"
             @change:critical_rate="critical_rate = $event"
@@ -45,9 +45,9 @@
 <script>
 import Header from "../organisms/Header";
 import Footer from "../organisms/Footer";
-// import Input from "../organisms/Input";
 import Output from "../organisms/Output";
 import CharacterAndWeapon from "../organisms/CharacterAndWeapon";
+import Artifacts from "../organisms/Artifacts";
 
 export default {
   name: "GenshinCalc",
@@ -58,6 +58,7 @@ export default {
     // Input,
     Output,
     CharacterAndWeapon,
+    Artifacts,
   },
   data() {
     return {
