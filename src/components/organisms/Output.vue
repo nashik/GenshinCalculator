@@ -5,8 +5,30 @@
       <template v-slot:default>
         <thead>
           <tr>
-            <th class="text-left">Name</th>
-            <th class="text-left">Value</th>
+            <th class="text-left">基礎攻撃力</th>
+            <th class="text-left">攻撃力(%)</th>
+            <th class="text-left">会心率(%)</th>
+            <th class="text-left">会心ダメージ(%)</th>
+            <th class="text-left">ダメージバフ(%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ base_attack }}</td>
+            <td>{{ attack_bonus * 100 }}</td>
+            <td>{{ critical_rate * 100 }}</td>
+            <td>{{ critical_damage * 100 }}</td>
+            <td>{{ damage_bonus * 100 }}</td>
+          </tr>
+        </tbody>
+      </template>
+    </v-simple-table>
+    <v-simple-table dense>
+      <template v-slot:default>
+        <thead>
+          <tr>
+            <th class="text-left">種別</th>
+            <th class="text-left">値</th>
           </tr>
         </thead>
         <tbody>
