@@ -5,7 +5,7 @@
     </v-app-bar>
     <v-main>
       <v-row>
-        <v-col offset="1" cols="5">
+        <v-col offset="1" cols="10">
           <CharacterAndWeapon
             @change:base_attack="base_attack = $event"
             @change:attack_bonus="attack_bonus = $event"
@@ -14,7 +14,9 @@
             @change:damage_bonus="damage_bonus = $event"
           />
         </v-col>
-        <v-col cols="5">
+      </v-row>
+      <v-row>
+        <v-col offset="1" cols="10">
           <Artifacts
             @change:base_attack="base_attack = $event"
             @change:attack_bonus="attack_bonus = $event"
@@ -58,7 +60,7 @@ export default {
     // Input,
     Output,
     CharacterAndWeapon,
-    Artifacts,
+    Artifacts
   },
   data() {
     return {
@@ -68,8 +70,8 @@ export default {
       // atrifacts_attack_flat_bonus: 0,
       critical_rate: 0,
       critical_damage: 0,
-      damage_bonus: 0,
+      damage_bonus: 0
     };
-  },
+  }
 };
 </script>

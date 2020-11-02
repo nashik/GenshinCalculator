@@ -1,11 +1,18 @@
 <template>
-  <v-card>
-    <v-card-title>キャラクター</v-card-title>
-    <InputCharacter @change:character="changeCharacter" />
-    <v-divider class="mx-4"></v-divider>
-    <v-card-title>武器</v-card-title>
-    <InputWeapon ref="weapon" :weapon_type="weapon_type" @change:weapon="changeWeapon" />
-  </v-card>
+  <v-row>
+    <v-col>
+      <v-card>
+        <v-card-title>キャラクター</v-card-title>
+        <InputCharacter @change:character="changeCharacter" />
+      </v-card>
+    </v-col>
+    <v-col>
+      <v-card>
+        <v-card-title>武器</v-card-title>
+        <InputWeapon ref="weapon" :weapon_type="weapon_type" @change:weapon="changeWeapon" />
+      </v-card>
+    </v-col>
+  </v-row>
 </template>
 <script>
 import InputCharacter from "../molecules/InputCharacter";
