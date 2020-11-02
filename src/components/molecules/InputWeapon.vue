@@ -74,9 +74,9 @@ export default {
       // キャラクター変更時に、変更前と変更後のキャラクターのweapon_typeが
       // 同じ場合は武器の選択状態をそのままにする
       // 違う場合は武器の選択リストをキャラクターのweapon_typeでフィルタリングして再設定する
+      this.weapons = weapons_json.filter(d => d.weapon_type == value);
       let _w = this.weapons.filter(d => d.weapon_type == this.weapon_type);
       if (_w.length == 0) {
-        this.weapons = weapons_json.filter(d => d.weapon_type == value);
         this.selectedWeapon = this.weapons[0];
         this.selectedLevel = this.selectedWeapon.status[
           this.selectedWeapon.status.length - 1
