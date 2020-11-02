@@ -6,7 +6,6 @@
           v-model="selectedWeapon"
           :items="weapons"
           item-text="name"
-          item-value="id"
           label="武器"
           return-object
           @change="changeWeapon"
@@ -17,7 +16,6 @@
           v-model="selectedLevel"
           :items="selectedWeapon.status"
           item-text="level"
-          item-value="level"
           label="Lv. - 突破"
           return-object
           @change="changeLevel"
