@@ -28,6 +28,7 @@
       <template v-slot:default>
         <thead>
           <tr>
+            <th class="text-left">レアリティ</th>
             <th class="text-left">HP</th>
             <th class="text-left">攻撃力</th>
             <th class="text-left">防御力</th>
@@ -36,6 +37,7 @@
         </thead>
         <tbody>
           <tr>
+            <td>{{ selectedCharacter.rarity }}</td>
             <td>{{ selectedLevel.hp }}</td>
             <td>{{ selectedLevel.atk }}</td>
             <td>{{ selectedLevel.def }}</td>
@@ -54,7 +56,7 @@ export default {
   data() {
     return {
       characters: characters_json,
-      selectedCharacter: { special_type: "-" },
+      selectedCharacter: { rarity: "-", special_type: "-" },
       selectedLevel: { hp: 0, atk: 0, def: 0, special_value: 0 }
     };
   },
