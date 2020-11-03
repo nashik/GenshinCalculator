@@ -59,7 +59,7 @@ export default {
       setName: "",
       selectedArtifact: "",
       selectedRarity: "",
-      selectedMainStatus: "",
+      selectedMainStatus: { special_type: "" },
       selectedLevel: "",
 
       specialType: "-",
@@ -123,21 +123,49 @@ export default {
       }
       this.setName = _set_name;
 
-      // 下位の選択状態をクリア
-      this.selectedRarity = "";
-      this.selectedMainStatus = "";
-      this.selectedLevel = "";
+      // 聖遺物変更時に、同じレアリティのデータがあればそのままにする
+      // 同じレアリティのデータがない場合は、最大レアリティを選択する
+      let _rarityList = this.getRarities;
+      let _sameRarity = this.selectedRarity;
+      if (!_rarityList.includes(_sameRarity)) {
+        this.selectedRarity = _rarityList[_rarityList.length - 1];
+      } else {
+        this.selectedRarity = _sameRarity;
+      }
+
+      this.changeRarity();
     },
     changeRarity() {
-      // 下位の選択状態をクリア
-      this.selectedMainStatus = "";
-      this.selectedLevel = "";
+      // レアリティ変更時に、同じステータスのデータがあればそのままにする
+      // 同じステータスのデータがない場合は、1番目のステータスを選択する
+      let _mainStatusList = this.getMainStatuses;
+      let _sameMainStatus = _mainStatusList.find(
+        d => d.special_type === this.selectedMainStatus.special_type
+      );
+      if (typeof _sameMainStatus === "undefined") {
+        this.selectedMainStatus = _mainStatusList[0];
+      } else {
+        this.selectedMainStatus = _sameMainStatus;
+      }
+
+      this.changeMainStatus();
     },
     changeMainStatus() {
       this.specialType = this.selectedMainStatus.special_type;
 
-      // 下位の選択状態をクリア
-      this.selectedLevel = "";
+      // ステータス変更時に、同じレベルのデータがあればそのままにする
+      // 同じレベルのデータがない場合は、最大レベルを選択する
+      let _levelList = this.getLevels;
+      let _sameLevel = _levelList.find(
+        d => d.level === this.selectedLevel.level
+      );
+      if (typeof _sameLevel === "undefined") {
+        this.selectedLevel = _levelList[_levelList.length - 1];
+      } else {
+        this.selectedLevel = _sameLevel;
+      }
+
+      this.changeLevel();
     },
     changeLevel() {
       this.specialValue = this.selectedLevel.value;
