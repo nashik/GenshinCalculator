@@ -1,0 +1,363 @@
+[
+    {
+        "type": "Flower",
+        "possible_specials": [
+            {
+                "rarity": "★4",
+                "special_values": [
+                    {
+                        "special_type": "HP",
+                        "values": [
+                            {
+                                "level": "1",
+                                "value": "645"
+                            },
+                            {
+                                "level": "16",
+                                "value": "3571"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "rarity": "★5",
+                "special_values": [
+                    {
+                        "special_type": "HP",
+                        "values": [
+                            {
+                                "level": "1",
+                                "value": "717"
+                            },
+                            {
+                                "level": "20",
+                                "value": "4780"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "type": "Plume",
+        "possible_specials": [
+            {
+                "rarity": "★4",
+                "special_values": [
+                    {
+                        "special_type": "攻撃力",
+                        "values": [
+                            {
+                                "level": "1",
+                                "value": "42"
+                            },
+                            {
+                                "level": "16",
+                                "value": "232"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "rarity": "★5",
+                "special_values": [
+                    {
+                        "special_type": "攻撃力",
+                        "values": [
+                            {
+                                "level": "1",
+                                "value": "47"
+                            },
+                            {
+                                "level": "20",
+                                "value": "311"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "type": "Sands",
+        "possible_specials": [
+            {
+                "rarity": "★4",
+                "special_values": [
+                    {
+                        "special_type": "HP(%)",
+                        "values": [
+                            {
+                                "level": "1",
+                                "value": "0.063"
+                            },
+                            {
+                                "level": "16",
+                                "value": "0.348"
+                            }
+                        ]
+                    },
+                    {
+                        "special_type": "防御力(%)",
+                        "values": [
+                            {
+                                "level": "1",
+                                "value": "0.079"
+                            },
+                            {
+                                "level": "16",
+                                "value": "0.435"
+                            }
+                        ]
+                    },
+                    {
+                        "special_type": "攻撃力(%)",
+                        "values": [
+                            {
+                                "level": "1",
+                                "value": "0.063"
+                            },
+                            {
+                                "level": "16",
+                                "value": "0.348"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "rarity": "★5",
+                "special_values": [
+                    {
+                        "special_type": "HP(%)",
+                        "values": [
+                            {
+                                "level": "1",
+                                "value": "0.07"
+                            },
+                            {
+                                "level": "20",
+                                "value": "0.466"
+                            }
+                        ]
+                    },
+                    {
+                        "special_type": "防御力(%)",
+                        "values": [
+                            {
+                                "level": "1",
+                                "value": "0.87"
+                            },
+                            {
+                                "level": "20",
+                                "value": "0.583"
+                            }
+                        ]
+                    },
+                    {
+                        "special_type": "攻撃力(%)",
+                        "values": [
+                            {
+                                "level": "1",
+                                "value": "0.07"
+                            },
+                            {
+                                "level": "20",
+                                "value": "0.466"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "type": "Goblet",
+        "possible_specials": [
+            {
+                "rarity": "★4",
+                "special_values": [
+                    {
+                        "special_type": "HP(%)",
+                        "values": [
+                            {
+                                "level": "1",
+                                "value": "0.063"
+                            },
+                            {
+                                "level": "16",
+                                "value": "0.348"
+                            }
+                        ]
+                    },
+                    {
+                        "special_type": "防御力(%)",
+                        "values": [
+                            {
+                                "level": "1",
+                                "value": "0.079"
+                            },
+                            {
+                                "level": "16",
+                                "value": "0.435"
+                            }
+                        ]
+                    },
+                    {
+                        "special_type": "攻撃力(%)",
+                        "values": [
+                            {
+                                "level": "1",
+                                "value": "0.063"
+                            },
+                            {
+                                "level": "16",
+                                "value": "0.348"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "rarity": "★5",
+                "special_values": [
+                    {
+                        "special_type": "HP(%)",
+                        "values": [
+                            {
+                                "level": "1",
+                                "value": "0.07"
+                            },
+                            {
+                                "level": "20",
+                                "value": "0.466"
+                            }
+                        ]
+                    },
+                    {
+                        "special_type": "防御力(%)",
+                        "values": [
+                            {
+                                "level": "1",
+                                "value": "0.87"
+                            },
+                            {
+                                "level": "20",
+                                "value": "0.583"
+                            }
+                        ]
+                    },
+                    {
+                        "special_type": "攻撃力(%)",
+                        "values": [
+                            {
+                                "level": "1",
+                                "value": "0.07"
+                            },
+                            {
+                                "level": "20",
+                                "value": "0.466"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "type": "Circlet",
+        "possible_specials": [
+            {
+                "rarity": "★4",
+                "special_values": [
+                    {
+                        "special_type": "HP(%)",
+                        "values": [
+                            {
+                                "level": "1",
+                                "value": "0.063"
+                            },
+                            {
+                                "level": "16",
+                                "value": "0.348"
+                            }
+                        ]
+                    },
+                    {
+                        "special_type": "防御力(%)",
+                        "values": [
+                            {
+                                "level": "1",
+                                "value": "0.079"
+                            },
+                            {
+                                "level": "16",
+                                "value": "0.435"
+                            }
+                        ]
+                    },
+                    {
+                        "special_type": "攻撃力(%)",
+                        "values": [
+                            {
+                                "level": "1",
+                                "value": "0.063"
+                            },
+                            {
+                                "level": "16",
+                                "value": "0.348"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "rarity": "★5",
+                "special_values": [
+                    {
+                        "special_type": "HP(%)",
+                        "values": [
+                            {
+                                "level": "1",
+                                "value": "0.07"
+                            },
+                            {
+                                "level": "20",
+                                "value": "0.466"
+                            }
+                        ]
+                    },
+                    {
+                        "special_type": "防御力(%)",
+                        "values": [
+                            {
+                                "level": "1",
+                                "value": "0.87"
+                            },
+                            {
+                                "level": "20",
+                                "value": "0.583"
+                            }
+                        ]
+                    },
+                    {
+                        "special_type": "攻撃力(%)",
+                        "values": [
+                            {
+                                "level": "1",
+                                "value": "0.07"
+                            },
+                            {
+                                "level": "20",
+                                "value": "0.466"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]
