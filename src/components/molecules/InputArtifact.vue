@@ -16,19 +16,24 @@
       return-object
       @change="changeMainStatus"
     ></v-select>
-    <v-select v-model="selectedLevel" :items="getLevels" item-text="level" label="Lv."></v-select>
+    <v-select
+      v-model="selectedLevel"
+      :items="getLevels"
+      item-text="level"
+      label="Lv."
+      return-object
+      @change="changeLevel"
+    ></v-select>
     <v-simple-table dense>
       <template v-slot:default>
         <thead>
           <tr>
-            <th class="text-left">攻撃力</th>
-            <th class="text-left">aaa</th>
+            <th class="text-left">{{specialType}}</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>111</td>
-            <td>111</td>
+            <td>{{viewSpecialValue}}</td>
           </tr>
         </tbody>
       </template>
@@ -55,7 +60,10 @@ export default {
       selectedArtifact: "",
       selectedRarity: "",
       selectedMainStatus: "",
-      selectedLevel: ""
+      selectedLevel: "",
+
+      specialType: "-",
+      specialValue: 0
     };
   },
   computed: {
@@ -92,6 +100,14 @@ export default {
         return this.selectedMainStatus.values;
       }
       return [];
+    },
+    // special_typeが%値の場合、100を掛けて%表示する(小数点第1位まで)
+    viewSpecialValue() {
+      if (this.specialType.match(/%/)) {
+        return (this.specialValue * 100).toFixed(1);
+      } else {
+        return this.specialValue;
+      }
     }
   },
   methods: {
@@ -118,8 +134,13 @@ export default {
       this.selectedLevel = "";
     },
     changeMainStatus() {
+      this.specialType = this.selectedMainStatus.special_type;
+
       // 下位の選択状態をクリア
       this.selectedLevel = "";
+    },
+    changeLevel() {
+      this.specialValue = this.selectedLevel.value;
     }
   }
 };
