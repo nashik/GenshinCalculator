@@ -4,7 +4,7 @@
       v-model="selectedArtifact"
       :items="artifacts"
       item-text="name"
-      :label="type"
+      :label="label"
       @change="changeArtifact"
     ></v-select>
     <v-select
@@ -47,6 +47,9 @@ import artifact_json from "../../assets/weapons.json";
 export default {
   name: "InputArtifact",
   props: {
+    label: {
+      type: String
+    },
     type: {
       type: String
     }

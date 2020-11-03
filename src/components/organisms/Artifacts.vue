@@ -4,19 +4,19 @@
     <v-card-text>
       <v-row>
         <v-col>
-          <InputArtifact type="生の花" @change:artifact="changeFlower" />
+          <InputArtifact type="Flower" label="生の花" @change:artifact="changeFlower" />
         </v-col>
         <v-col>
-          <InputArtifact type="死の羽" @change:artifact="changePlume" />
+          <InputArtifact type="Plume" label="死の羽" @change:artifact="changePlume" />
         </v-col>
         <v-col>
-          <InputArtifact type="時の砂" @change:artifact="changeSands" />
+          <InputArtifact type="Sands" label="時の砂" @change:artifact="changeSands" />
         </v-col>
         <v-col>
-          <InputArtifact type="空の杯" @change:artifact="changeGoblet" />
+          <InputArtifact type="Goblet" label="空の杯" @change:artifact="changeGoblet" />
         </v-col>
         <v-col>
-          <InputArtifact type="理の冠" @change:artifact="changeCirclet" />
+          <InputArtifact type="Circlet" label="理の冠" @change:artifact="changeCirclet" />
         </v-col>
       </v-row>
     </v-card-text>
