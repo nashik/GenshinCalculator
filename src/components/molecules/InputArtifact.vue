@@ -7,13 +7,14 @@
       :label="label"
       @change="changeArtifact"
     ></v-select>
-    <v-select v-model="selectedRarity" :items="getRarities" label="レアリティ"></v-select>
+    <v-select v-model="selectedRarity" :items="getRarities" label="レアリティ" @change="changeRarity"></v-select>
     <v-select
       v-model="selectedMainStatus"
       :items="getMainStatuses"
       item-text="special_type"
       label="ステータス"
       return-object
+      @change="changeMainStatus"
     ></v-select>
     <v-select v-model="selectedLevel" :items="getLevels" item-text="level" label="Lv."></v-select>
     <v-simple-table dense>
@@ -95,6 +96,7 @@ export default {
   },
   methods: {
     changeArtifact() {
+      // セット名を取得して保持する
       let _set_name = "";
       for (let _a in artifact_json) {
         if (
@@ -104,6 +106,20 @@ export default {
         }
       }
       this.setName = _set_name;
+
+      // 下位の選択状態をクリア
+      this.selectedRarity = "";
+      this.selectedMainStatus = "";
+      this.selectedLevel = "";
+    },
+    changeRarity() {
+      // 下位の選択状態をクリア
+      this.selectedMainStatus = "";
+      this.selectedLevel = "";
+    },
+    changeMainStatus() {
+      // 下位の選択状態をクリア
+      this.selectedLevel = "";
     }
   }
 };
