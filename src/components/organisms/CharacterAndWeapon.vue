@@ -1,12 +1,12 @@
 <template>
   <v-row>
-    <v-col>
+    <v-col class="py-0">
       <v-card>
         <v-card-title>キャラクター</v-card-title>
         <InputCharacter @change:character="changeCharacter" />
       </v-card>
     </v-col>
-    <v-col>
+    <v-col class="py-0">
       <v-card>
         <v-card-title>武器</v-card-title>
         <InputWeapon ref="weapon" :weapon_type="weapon_type" @change:weapon="changeWeapon" />
