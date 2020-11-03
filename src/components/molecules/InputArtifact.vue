@@ -6,7 +6,13 @@
       item-text="name"
       :label="label"
       @change="changeArtifact"
-    ></v-select>
+    >
+      <template v-slot:append-outer>
+        <v-btn icon @click="clickDelete">
+          <v-icon>mdi-delete</v-icon>
+        </v-btn>
+      </template>
+    </v-select>
     <v-select v-model="selectedRarity" :items="getRarities" label="レアリティ" @change="changeRarity"></v-select>
     <v-select
       v-model="selectedMainStatus"
@@ -136,16 +142,21 @@ export default {
       this.changeRarity();
     },
     changeRarity() {
-      // レアリティ変更時に、同じステータスのデータがあればそのままにする
-      // 同じステータスのデータがない場合は、1番目のステータスを選択する
       let _mainStatusList = this.getMainStatuses;
-      let _sameMainStatus = _mainStatusList.find(
-        d => d.special_type === this.selectedMainStatus.special_type
-      );
-      if (typeof _sameMainStatus === "undefined") {
-        this.selectedMainStatus = _mainStatusList[0];
+      if (0 === _mainStatusList.length) {
+        // リストが存在しない場合は、初期値を設定する
+        this.selectedMainStatus = { special_type: "-", values: [] };
       } else {
-        this.selectedMainStatus = _sameMainStatus;
+        // レアリティ変更時に、同じステータスのデータがあればそのままにする
+        // 同じステータスのデータがない場合は、1番目のステータスを選択する
+        let _sameMainStatus = _mainStatusList.find(
+          d => d.special_type === this.selectedMainStatus.special_type
+        );
+        if (typeof _sameMainStatus === "undefined") {
+          this.selectedMainStatus = _mainStatusList[0];
+        } else {
+          this.selectedMainStatus = _sameMainStatus;
+        }
       }
 
       this.changeMainStatus();
@@ -153,16 +164,21 @@ export default {
     changeMainStatus() {
       this.specialType = this.selectedMainStatus.special_type;
 
-      // ステータス変更時に、同じレベルのデータがあればそのままにする
-      // 同じレベルのデータがない場合は、最大レベルを選択する
       let _levelList = this.getLevels;
-      let _sameLevel = _levelList.find(
-        d => d.level === this.selectedLevel.level
-      );
-      if (typeof _sameLevel === "undefined") {
-        this.selectedLevel = _levelList[_levelList.length - 1];
+      if (0 === _levelList.length) {
+        // リストが存在しない場合は、初期値を設定する
+        this.selectedLevel = { value: 0 };
       } else {
-        this.selectedLevel = _sameLevel;
+        // ステータス変更時に、同じレベルのデータがあればそのままにする
+        // 同じレベルのデータがない場合は、最大レベルを選択する
+        let _sameLevel = _levelList.find(
+          d => d.level === this.selectedLevel.level
+        );
+        if (typeof _sameLevel === "undefined") {
+          this.selectedLevel = _levelList[_levelList.length - 1];
+        } else {
+          this.selectedLevel = _sameLevel;
+        }
       }
 
       this.changeLevel();
@@ -176,6 +192,10 @@ export default {
         special_value: this.specialValue
       };
       this.$emit("change:artifact", _data);
+    },
+    clickDelete() {
+      this.selectedArtifact = "";
+      this.changeArtifact();
     }
   }
 };
