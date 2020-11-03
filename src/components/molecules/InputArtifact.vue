@@ -141,6 +141,13 @@ export default {
     },
     changeLevel() {
       this.specialValue = this.selectedLevel.value;
+
+      // Artifactsに変更を通知
+      let _data = {
+        special_type: this.specialType,
+        special_value: this.specialValue
+      };
+      this.$emit("change:artifact", _data);
     }
   }
 };

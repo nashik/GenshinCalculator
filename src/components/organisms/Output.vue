@@ -7,7 +7,8 @@
         <template v-slot:default>
           <thead>
             <tr>
-              <th class="text-left">基礎攻撃力</th>
+              <th></th>
+              <th class="text-left">攻撃力</th>
               <th class="text-left">攻撃力(%)</th>
               <th class="text-left">会心率(%)</th>
               <th class="text-left">会心ダメージ(%)</th>
@@ -16,11 +17,20 @@
           </thead>
           <tbody>
             <tr>
+              <th>キャラクター＋武器</th>
               <td>{{ base_attack }}</td>
               <td>{{ attack_bonus * 100 }}</td>
               <td>{{ critical_rate * 100 }}</td>
               <td>{{ critical_damage * 100 }}</td>
               <td>{{ damage_bonus * 100 }}</td>
+            </tr>
+            <tr>
+              <th>聖遺物</th>
+              <td>{{ artifacts_attack }}</td>
+              <td>{{ artifacts_attack_bonus * 100 }}</td>
+              <td>{{ artifacts_critical_rate * 100 }}</td>
+              <td>{{ artifacts_critical_damage * 100 }}</td>
+              <td>{{ artifacts_damage_bonus * 100 }}</td>
             </tr>
           </tbody>
         </template>
@@ -60,6 +70,7 @@
 export default {
   name: "Output",
   props: {
+    // キャラクター＋武器
     base_attack: {
       type: Number
     },
@@ -73,6 +84,22 @@ export default {
       type: Number
     },
     damage_bonus: {
+      type: Number
+    },
+    // 聖遺物
+    artifacts_attack: {
+      type: Number
+    },
+    artifacts_attack_bonus: {
+      type: Number
+    },
+    artifacts_critical_rate: {
+      type: Number
+    },
+    artifacts_critical_damage: {
+      type: Number
+    },
+    artifacts_damage_bonus: {
       type: Number
     }
   },
@@ -89,7 +116,16 @@ export default {
   },
   methods: {
     calcNormalDamage() {
-      return this.base_attack * (1 + this.attack_bonus + this.damage_bonus);
+      // ATK Power
+      // = [(Character's Base ATK + Weapon ATK)
+      //   × (1 + Weapon ATK% bonuses + Artifact ATK% bonuses)]
+      //   + Artifact ATK flat bonuses
+      return (
+        (this.base_attack *
+          (1 + this.attack_bonus + this.artifacts_attack_bonus) +
+          this.artifacts_attack) *
+        (1 + this.damage_bonus)
+      );
     },
     calcCriticalDamage() {
       return this.calcNormalDamage() * (1 + this.critical_damage);
