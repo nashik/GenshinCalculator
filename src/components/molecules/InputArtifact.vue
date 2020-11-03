@@ -13,9 +13,9 @@
       :items="getMainStatuses"
       item-text="special_type"
       label="ステータス"
+      return-object
     ></v-select>
-    <v-select v-model="selectedLevel" :items="levels" label="Lv."></v-select>
-
+    <v-select v-model="selectedLevel" :items="getLevels" item-text="level" label="Lv."></v-select>
     <v-simple-table dense>
       <template v-slot:default>
         <thead>
@@ -51,11 +51,10 @@ export default {
   data() {
     return {
       setName: "",
-      levels: [...Array(20).keys()].map(i => ++i),
       selectedArtifact: "",
       selectedRarity: "",
       selectedMainStatus: "",
-      selectedLevel: 0
+      selectedLevel: ""
     };
   },
   computed: {
@@ -84,6 +83,12 @@ export default {
         if (_b) {
           return _b.special_values;
         }
+      }
+      return [];
+    },
+    getLevels() {
+      if (this.selectedMainStatus) {
+        return this.selectedMainStatus.values;
       }
       return [];
     }
