@@ -8,7 +8,12 @@
       @change="changeArtifact"
     ></v-select>
     <v-select v-model="selectedRarity" :items="getRarities" label="レアリティ"></v-select>
-    <v-select v-model="selectedMainStatus" :items="mainStatus" label="ステータス"></v-select>
+    <v-select
+      v-model="selectedMainStatus"
+      :items="getMainStatuses"
+      item-text="special_type"
+      label="ステータス"
+    ></v-select>
     <v-select v-model="selectedLevel" :items="levels" label="Lv."></v-select>
 
     <v-simple-table dense>
@@ -31,7 +36,7 @@
 </template>
 <script>
 import artifact_json from "../../assets/artifacts.json";
-// import artifact_main_statuses_json from "../../assets/artifact_main_statuses.json";
+import artifact_main_statuses_json from "../../assets/artifact_main_statuses.json";
 
 export default {
   name: "InputArtifact",
@@ -47,11 +52,10 @@ export default {
     return {
       setName: "",
       levels: [...Array(20).keys()].map(i => ++i),
-      mainStatus: ["HP", "攻撃力%", "会心率"],
       selectedArtifact: "",
+      selectedRarity: "",
       selectedMainStatus: "",
-      selectedLevel: 0,
-      selectedRarity: 0
+      selectedLevel: 0
     };
   },
   computed: {
@@ -68,6 +72,18 @@ export default {
       let _a = artifact_json.find(d => d.set_name === this.setName);
       if (_a) {
         return _a.rarities;
+      }
+      return [];
+    },
+    getMainStatuses() {
+      let _a = artifact_main_statuses_json.find(d => d.type === this.type);
+      if (_a) {
+        let _b = _a.possible_specials.find(
+          d => d.rarity === this.selectedRarity
+        );
+        if (_b) {
+          return _b.special_values;
+        }
       }
       return [];
     }
