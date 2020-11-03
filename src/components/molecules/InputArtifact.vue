@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-select
+    <v-autocomplete
       v-model="selectedArtifact"
       :items="getArtifacts"
       item-text="name"
@@ -12,7 +12,7 @@
           <v-icon>mdi-delete</v-icon>
         </v-btn>
       </template>
-    </v-select>
+    </v-autocomplete>
     <v-select v-model="selectedRarity" :items="getRarities" label="レアリティ" @change="changeRarity"></v-select>
     <v-select
       v-model="selectedMainStatus"

@@ -2,14 +2,14 @@
   <v-card-text>
     <v-row>
       <v-col>
-        <v-select
+        <v-autocomplete
           v-model="selectedWeapon"
           :items="weapons"
           item-text="name"
           label="武器"
           return-object
           @change="changeWeapon"
-        ></v-select>
+        ></v-autocomplete>
       </v-col>
       <v-col>
         <v-select

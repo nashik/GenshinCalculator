@@ -2,7 +2,7 @@
   <v-card-text>
     <v-row>
       <v-col>
-        <v-select
+        <v-autocomplete
           v-model="selectedCharacter"
           :items="characters"
           item-text="name"
@@ -10,7 +10,7 @@
           label="キャラクター"
           return-object
           @change="changeCharacter"
-        ></v-select>
+        ></v-autocomplete>
       </v-col>
       <v-col>
         <v-select
