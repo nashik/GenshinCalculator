@@ -19,11 +19,26 @@
           <InputArtifact type="Circlet" label="理の冠" @change:artifact="changeCirclet" />
         </v-col>
       </v-row>
+      <v-row>
+        <v-col>
+          <strong>セット効果</strong>
+          <div v-for="g in aggregateSetName" :key="g.set_name">
+            <ul v-if="g.set_name != '' && g.count >= 2">
+              <li>{{ g.set_name }}</li>
+              <ul v-if="g.set_name != '' && g.count >= 2">
+                <li v-if="g.count >= 2">{{ getSetBonus(2, g.set_name) }}</li>
+                <li v-if="g.count >= 4">{{ getSetBonus(4, g.set_name) }}</li>
+              </ul>
+            </ul>
+          </div>
+        </v-col>
+      </v-row>
     </v-card-text>
     <!-- <v-card-text>{{artifact_statuses}}</v-card-text> -->
   </v-card>
 </template>
 <script>
+import artifacts_json from "../../assets/artifacts.json";
 import InputArtifact from "../molecules/InputArtifact";
 
 export default {
@@ -37,6 +52,7 @@ export default {
         {
           // Flower
           type: "Flower",
+          set_name: "",
           hp: 0,
           hp_bonus: 0,
           attack: 0,
@@ -49,6 +65,7 @@ export default {
         {
           // Plume
           type: "Plume",
+          set_name: "",
           hp: 0,
           hp_bonus: 0,
           attack: 0,
@@ -61,6 +78,7 @@ export default {
         {
           // Sands
           type: "Sands",
+          set_name: "",
           hp: 0,
           hp_bonus: 0,
           attack: 0,
@@ -73,6 +91,7 @@ export default {
         {
           // Goblet
           type: "Goblet",
+          set_name: "",
           hp: 0,
           hp_bonus: 0,
           attack: 0,
@@ -85,6 +104,7 @@ export default {
         {
           // Circlet
           type: "Circlet",
+          set_name: "",
           hp: 0,
           hp_bonus: 0,
           attack: 0,
@@ -96,6 +116,33 @@ export default {
         }
       ]
     };
+  },
+  computed: {
+    aggregateSetName() {
+      var group = this.artifact_statuses.reduce(function(result, current) {
+        var element = result.find(function(p) {
+          return p.set_name == current.set_name;
+        });
+        if (element) {
+          element.count++;
+        } else {
+          result.push({
+            set_name: current.set_name,
+            count: 1
+          });
+        }
+        return result;
+      }, []);
+      return group;
+    },
+    getSetBonus: function() {
+      return function(n, set_name) {
+        let _a = artifacts_json.find(d => d.set_name === set_name);
+        if (n >= 4) return _a.four_piece_bonus;
+        if (n >= 2) return _a.two_piece_bonus;
+        return "";
+      };
+    }
   },
   methods: {
     changeFlower: function(value) {
@@ -119,6 +166,7 @@ export default {
       this.emitData();
     },
     updateData(n, value) {
+      this.artifact_statuses[n].set_name = value.set_name;
       this.artifact_statuses[n].hp = 0;
       this.artifact_statuses[n].hp_bonus = 0;
       this.artifact_statuses[n].attack = 0;

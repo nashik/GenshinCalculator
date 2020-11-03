@@ -188,6 +188,7 @@ export default {
 
       // Artifactsに変更を通知
       let _data = {
+        set_name: this.setName,
         special_type: this.specialType,
         special_value: this.specialValue
       };
