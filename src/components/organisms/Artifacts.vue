@@ -21,7 +21,7 @@
       </v-row>
       <v-row>
         <v-col>
-          <strong>セット効果</strong>
+          <strong>セット効果(※結果には反映されません)</strong>
           <div v-for="g in aggregateSetName" :key="g.set_name">
             <ul v-if="g.set_name != '' && g.count >= 2">
               <li>{{ g.set_name }}</li>
