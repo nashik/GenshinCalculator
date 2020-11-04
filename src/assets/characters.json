@@ -1,0 +1,127 @@
+[
+    {
+        "id": "Traveler",
+        "name": "主人公",
+        "rarity": "★5",
+        "weapon_type": "Swords",
+        "special_type": "攻撃力(%)",
+        "status": [
+            {
+                "level": "80 - ◆◆◆◆◆◇",
+                "ascension": false,
+                "hp": 9638,
+                "atk": 188,
+                "def": 105,
+                "special_value": 0.18
+            },
+            {
+                "level": "80 - ◆◆◆◆◆◆",
+                "ascension": true,
+                "hp": 10122,
+                "atk": 198,
+                "def": 635,
+                "special_value": 0.24
+            },
+            {
+                "level": "90 - ◆◆◆◆◆◆",
+                "ascension": false,
+                "hp": 10875,
+                "atk": 213,
+                "def": 682,
+                "special_value": 0.24
+            }
+        ]
+    },
+    {
+        "id": "Kaeya",
+        "name": "ガイア",
+        "rarity": "★4",
+        "weapon_type": "Swords",
+        "special_type": "元素チャージ効率(%)",
+        "status": [
+            {
+                "level": "80 - ◆◆◆◆◆◆",
+                "ascension": true,
+                "hp": 10830,
+                "atk": 205,
+                "def": 737,
+                "special_value": 0.267
+            },
+            {
+                "level": "90 - ◆◆◆◆◆◆",
+                "ascension": false,
+                "hp": 11636,
+                "atk": 220,
+                "def": 792,
+                "special_value": 0.267
+            }
+        ]
+    },
+    {
+        "id": "Lisa",
+        "name": "リサ",
+        "rarity": "★4",
+        "weapon_type": "Catalysts",
+        "special_type": "元素熟知",
+        "status": [
+            {
+                "level": "70 - ◆◆◆◆◆◇",
+                "ascension": true,
+                "hp": 7818,
+                "atk": 191,
+                "def": 468,
+                "special_value": 72
+            },
+            {
+                "level": "80 - ◆◆◆◆◆◆",
+                "ascension": true,
+                "hp": 8906,
+                "atk": 218,
+                "def": 533,
+                "special_value": 96
+            },
+            {
+                "level": "90 - ◆◆◆◆◆◆",
+                "ascension": false,
+                "hp": 9569,
+                "atk": 234,
+                "def": 537,
+                "special_value": 96
+            }
+        ]
+    },
+    {
+        "id": "Fischl",
+        "name": "フィッシュル",
+        "rarity": "★4",
+        "weapon_type": "Bows",
+        "special_type": "攻撃力(%)",
+        "status": [
+            {
+                "level": "80 - ◆◆◆◆◆◆",
+                "ascension": true,
+                "hp": 8553,
+                "atk": 227,
+                "def": 553,
+                "special_value": 0.24
+            }
+        ]
+    },
+    {
+        "id": "Diluc",
+        "name": "ディルック",
+        "rarity": "★5",
+        "weapon_type": "Claymores",
+        "special_type": "会心率(%)",
+        "status": [
+            {
+                "level": "80 - ◆◆◆◆◆◆",
+                "ascension": true,
+                "hp": 12068,
+                "atk": 312,
+                "def": 729,
+                "special_value": 0.242
+            }
+        ]
+    }
+]

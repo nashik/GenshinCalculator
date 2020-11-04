@@ -1,0 +1,66 @@
+[
+    {
+        "id": "Gladiator's Finale",
+        "set_name": "剣闘士のフィナーレ",
+        "two_piece_bonus": "攻撃力+18%。",
+        "four_piece_bonus": "該当聖遺物セットを装備したキャラが片手剣、両手剣、長柄武器キャラの場合、通常攻撃ダメージ＋35％。",
+        "rarities": [
+            "★4",
+            "★5"
+        ],
+        "items": [
+            {
+                "type": "Flower",
+                "name": "剣闘士の未練"
+            },
+            {
+                "type": "Plume",
+                "name": "剣闘士の帰着"
+            },
+            {
+                "type": "Sands",
+                "name": "剣闘士の希望"
+            },
+            {
+                "type": "Goblet",
+                "name": "剣闘士の酩酊"
+            },
+            {
+                "type": "Circlet",
+                "name": "剣闘士の凱旋"
+            }
+        ]
+    },
+    {
+        "id": "Crimson Witch of Flames",
+        "set_name": "燃え盛る炎の魔女",
+        "two_piece_bonus": "炎元素ダメージ+15%。",
+        "four_piece_bonus": "過負荷、燃焼反応によるダメージ+40%。蒸発、溶解反応による加算効果+15%。元素爆発を発動した10秒間、2件セットの効果+50%、最大3重まで。",
+        "rarities": [
+            "★4",
+            "★5"
+        ],
+        "items": [
+            {
+                "type": "Flower",
+                "name": "魔女の炎の花"
+            },
+            {
+                "type": "Plume",
+                "name": "魔女の炎の羽根"
+            },
+            {
+                "type": "Sands",
+                "name": "魔女の破滅の時"
+            },
+            {
+                "type": "Goblet",
+                "name": "魔女の心の炎"
+            },
+            {
+                "type": "Circlet",
+                "name": "焦げた魔女の帽子"
+            }
+        ]
+    }
+]
